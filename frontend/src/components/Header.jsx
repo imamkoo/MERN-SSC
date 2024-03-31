@@ -44,15 +44,10 @@ export default function Header() {
           type="text"
           placeholder="Search..."
           rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
+          className="hidden lg:inline "
         ></TextInput>
       </form>
-      <Button
-        className="w-12 h-10 lg:hidden"
-        gradientDuoTone="purpleToBlue"
-        pill
-        outline
-      >
+      <Button className="w-12 h-10 lg:hidden " color="gray" pill outline>
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
