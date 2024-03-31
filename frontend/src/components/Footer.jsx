@@ -12,7 +12,7 @@ export default function Footer() {
                 to="/"
                 className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
               >
-                <span className="px-2 py-1 bg-gradient-to-r from-pink-400 via-pink-300 to-blue-400 rounded-xl text-white">
+                <span className="px-2 py-1 bg-gradient-to-r from-purple-600 via-blue-500 to-blue-400 rounded-xl text-white">
                   Save Street Child
                 </span>
                 <span className="text-base px-1">Sidoarjo</span>

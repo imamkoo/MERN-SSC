@@ -34,7 +34,7 @@ export default function Header() {
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
       >
-        <span className="px-2 py-1 bg-gradient-to-r from-pink-400 via-pink-300 to-blue-400 rounded-xl text-white">
+        <span className="px-2 py-1 bg-gradient-to-r from-purple-600 via-blue-500 to-blue-400 rounded-xl text-white">
           Save Street Child
         </span>
         <span className="text-base px-1">Sidoarjo</span>
@@ -47,7 +47,12 @@ export default function Header() {
           className="hidden lg:inline"
         ></TextInput>
       </form>
-      <Button className="w-12 h-10 lg:hidden" color="pink" pill>
+      <Button
+        className="w-12 h-10 lg:hidden"
+        gradientDuoTone="purpleToBlue"
+        pill
+        outline
+      >
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
@@ -81,7 +86,7 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToPink" outline>
+            <Button gradientDuoTone="purpleToBlue" outline>
               Sign In
             </Button>
           </Link>
