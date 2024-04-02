@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import PostPage from "./pages/PostPage";
 import Projects from "./pages/Projects";
+import Search from "./pages/Search";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import UpdatePost from "./pages/UpdatePost";
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/post/:postSlug" element={<PostPage />} />
       </Routes>
       <Footer />
