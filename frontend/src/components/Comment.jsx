@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-// Define propTypes outside the component
 Comment.propTypes = {
   comment: PropTypes.shape({
     _id: PropTypes.string.isRequired,
@@ -20,7 +19,6 @@ Comment.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
-// Define defaultProps outside the component
 Comment.defaultProps = {
   comment: {},
 };
