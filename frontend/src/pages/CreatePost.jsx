@@ -104,9 +104,9 @@ export default function CreatePost() {
             }
           >
             <option value="uncategorized">Select a category</option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-            <option value="category3">Category 3</option>
+            <option value="Sosial">Sosial</option>
+            <option value="Pendikan">Pendikan</option>
+            <option value="Kesehatan">Kesehatan</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
