@@ -127,11 +127,11 @@ export default function Header() {
           <Link to="/about">About</Link>
         </Navbar.Link>
         <Navbar.Link
-          active={path === "/projects"}
+          active={path === "/chat"}
           as={"div"}
           className="hover:underline"
         >
-          <Link to="/projects">Project</Link>
+          <Link to="/chat">Chat</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
