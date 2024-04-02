@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Comment from "./Comment";
 
+CommentSection.propTypes = {
+  postId: PropTypes.string.isRequired,
+};
+
 export default function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
   const [comment, setComment] = useState("");
@@ -14,13 +18,6 @@ export default function CommentSection({ postId }) {
   const [showModal, setShowModal] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
   const navigate = useNavigate();
-  CommentSection.propTypes = {
-    postId: PropTypes.string.isRequired,
-  };
-
-  CommentSection.defaultProps = {
-    postId: "",
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
