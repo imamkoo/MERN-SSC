@@ -1,7 +1,13 @@
 import { Button, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { RingLoader } from "react-spinners";
 import PostCard from "../components/PostCard";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
 
 export default function Search() {
   const [sidebarData, setSidebarData] = useState({
@@ -150,7 +156,14 @@ export default function Search() {
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
-          {loading && <p className="text-xl text-gray-500">Loading...</p>}
+          {loading && (
+            <RingLoader
+              color={"#123abc"}
+              loading={loading}
+              css={override}
+              size={100}
+            />
+          )}
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
