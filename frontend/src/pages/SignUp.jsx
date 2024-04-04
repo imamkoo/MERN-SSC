@@ -4,10 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
 
 export default function SignUp() {
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
@@ -83,11 +89,20 @@ export default function SignUp() {
             <div>
               <Label value="Password" />
               <TextInput
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 id="password"
                 onChange={handleChange}
               />
+              <Button
+                color="none"
+                size="xs"
+                pill
+                className="mt-4 "
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? "Hide" : "Show"} Password
+              </Button>
             </div>
             <Button
               gradientDuoTone="purpleToPink"
