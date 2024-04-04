@@ -3,11 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import { FaEraser } from "react-icons/fa";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import { RingLoader } from "react-spinners";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
   const navigate = useNavigate();
 
@@ -25,6 +32,7 @@ const ChatApp = () => {
   }, [chatHistory]);
 
   const fetchChatHistory = async () => {
+    setLoading(true);
     try {
       const token = localStorage.getItem("token");
       const response = await fetch("/api/chatbot/history", {
@@ -42,6 +50,8 @@ const ChatApp = () => {
     } catch (error) {
       console.error("Error fetching chat history:", error);
       setShowModal(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -105,8 +115,16 @@ const ChatApp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      {loading && (
+        <RingLoader
+          color={"#123abc"}
+          loading={loading}
+          css={override}
+          size={50}
+        />
+      )}
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity-85 backdrop-blur-3xl z-50"></div>
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity- backdrop-blur-3xl z-50"></div>
       )}
       <div className="w-full max-w-md bg-amber-50 dark:bg-slate-700 rounded-lg shadow-md p-6 relative">
         <Button
@@ -139,7 +157,12 @@ const ChatApp = () => {
           </List>
         </div>
         <div ref={formRef}>
-          <form onSubmit={sendMessage}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              sendMessage();
+            }}
+          >
             <div className="flex gap-2 items-center">
               <TextInput
                 type="text"
