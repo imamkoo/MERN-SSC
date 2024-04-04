@@ -71,12 +71,12 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         ></TextInput>
       </form>
-      <Button className="w-12 h-10 lg:hidden " color="gray" pill outline>
+      {/* <Button className="w-12 h-10 lg:hidden" color="gray" pill outline>
         <AiOutlineSearch />
-      </Button>
-      <div className="flex gap-2 md:order-2">
+      </Button> */}
+      <div className="flex gap-2 md:order-2 ">
         <Button
-          className="w-12 h-10 hidden sm:inline mx-6"
+          className="w-12 h-10 sm:inline "
           color="gray"
           pill
           onClick={() => dispatch(toggleTheme())}
@@ -133,6 +133,15 @@ export default function Header() {
           className="hover:underline"
         >
           <Link to="/chat">Chat</Link>
+        </Navbar.Link>
+        <Navbar.Link
+          active={path === "/search"}
+          as={"div"}
+          className="hover:underline lg:hidden md:hidden"
+        >
+          <Link to="/search">
+            <AiOutlineSearch />
+          </Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
