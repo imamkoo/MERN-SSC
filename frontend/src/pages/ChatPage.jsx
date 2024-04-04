@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaEraser } from "react-icons/fa";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { RingLoader } from "react-spinners";
+import { DotLoader } from "react-spinners";
 
 const override = {
   display: "block",
@@ -116,7 +116,7 @@ const ChatApp = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 mt-16">
       {loading && (
-        <RingLoader
+        <DotLoader
           color={"#123abc"}
           loading={loading}
           css={override}

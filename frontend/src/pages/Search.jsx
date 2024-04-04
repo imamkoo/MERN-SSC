@@ -1,7 +1,7 @@
 import { Button, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { RingLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 import PostCard from "../components/PostCard";
 
 const override = {
@@ -154,11 +154,11 @@ export default function Search() {
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
           {loading && (
-            <RingLoader
+            <PropagateLoader
               color={"#123abc"}
               loading={loading}
               css={override}
-              size={100}
+              size={25}
             />
           )}
           {!loading &&
