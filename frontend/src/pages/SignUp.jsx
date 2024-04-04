@@ -40,7 +40,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen mt-20">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="flex flex-col md:flex-row md:items-center p-3 max-w-3xl mx-auto gap-5">
         {/* LEFT */}
         <div className="flex-1">
@@ -48,14 +48,14 @@ export default function SignUp() {
             to="/"
             className="font-bold dark:text-white text-3xl md:text-2xl "
           >
-            <span className="px-2 py-1 bg-gradient-to-r from-pink-400 via-pink-300 to-blue-400 rounded-xl text-white">
+            <span className="px-2 py-1 bg-gradient-to-r from-purple-600 via-blue-500 to-blue-400 rounded-xl text-white">
               Save Street Child
             </span>
             <span className="text-base px-1">Sidoarjo</span>
           </Link>
           <p className="text-sm mt-5">
             Save Street Child Sidoarjo Community is a platform for everyone to
-            independently help foundations/individuals in need. You can sign up
+            independently help foundations/individuals in need. You can sign in
             with your email and password.
           </p>
         </div>

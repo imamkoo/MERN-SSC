@@ -1,14 +1,19 @@
-import { Button, List, ListItem, TextInput } from "flowbite-react";
+import { Button, List, ListItem, Modal, TextInput } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import { FaEraser } from "react-icons/fa";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchChatHistory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -21,25 +26,28 @@ const ChatApp = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
+      const token = localStorage.getItem("token");
       const response = await fetch("/api/chatbot/history", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       if (!response.ok) {
-        throw new Error("Failed to fetch chat history");
+        throw new Error(
+          `Failed to fetch chat history: ${response.status} ${response.statusText}`
+        );
       }
       const data = await response.json();
       setChatHistory(data);
     } catch (error) {
       console.error("Error fetching chat history:", error);
+      setShowModal(true);
     }
   };
 
   const sendMessage = async () => {
     try {
-      const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
+      const token = localStorage.getItem("token");
       const response = await fetch("/api/chatbot/send-message", {
         method: "POST",
         headers: {
@@ -66,7 +74,7 @@ const ChatApp = () => {
 
   const clearChatHistory = async () => {
     try {
-      const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
+      const token = localStorage.getItem("token");
       const response = await fetch("/api/chatbot/clear-history", {
         method: "DELETE",
         headers: {
@@ -82,8 +90,24 @@ const ChatApp = () => {
     }
   };
 
+  const handleModalClose = () => {
+    setShowModal(false);
+    navigate("/");
+  };
+  const handleModalSignin = () => {
+    setShowModal(false);
+    navigate("/sign-in");
+  };
+  const handleModalSignup = () => {
+    setShowModal(false);
+    navigate("/sign-up");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity-85 backdrop-blur-3xl z-50"></div>
+      )}
       <div className="w-full max-w-md bg-amber-50 dark:bg-slate-700 rounded-lg shadow-md p-6 relative">
         <Button
           color="failure"
@@ -137,6 +161,26 @@ const ChatApp = () => {
           </form>
         </div>
       </div>
+
+      <Modal show={showModal} onClose={handleModalClose} popup size="md">
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center">
+            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+              You must login to access chatbot!
+            </h3>
+            <div className="flex justify-center gap-4">
+              <Button color="failure" onClick={handleModalSignup}>
+                Sign Up
+              </Button>
+              <Button color="success" onClick={handleModalSignin}>
+                Sign In
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

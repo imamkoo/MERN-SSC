@@ -25,16 +25,8 @@ export default function Footer() {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                    <a href="https://google.com/" className="hover:underline">
+                    <a href="/about" className="hover:underline">
                       Save Street Child
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
-                      Tailwind CSS
                     </a>
                   </li>
                 </ul>
@@ -46,18 +38,15 @@ export default function Footer() {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href="https://instagram.com"
                       className="hover:underline "
                     >
-                      Github
+                      Instagram
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://discord.gg/4eeurUVvTy"
-                      className="hover:underline"
-                    >
-                      Discord
+                    <a href="https://facebook.com/" className="hover:underline">
+                      Facebook
                     </a>
                   </li>
                 </ul>
