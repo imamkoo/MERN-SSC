@@ -6,7 +6,7 @@ export default function About() {
           <h1 className="text-3xl font font-semibold text-center my-7">
             About Save Stree Child Sidoarjo
           </h1>
-          <div className="text-md text-gray-500 flex flex-col gap-6">
+          <div className="text-md text-gray-500 dark:text-gray-300 flex flex-col gap-6">
             <p>
               {`Welcome to the heart of compassion and change: the Save Street Child Sidoarjo Community! Here, we're dedicated to weaving a tapestry of hope and transformation for the children of Sidoarjo. With every step we take, we're rewriting their narratives, infusing them with love, education, and opportunities previously unseen.`}
             </p>

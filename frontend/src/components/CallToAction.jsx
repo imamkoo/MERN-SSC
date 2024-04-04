@@ -1,6 +1,12 @@
 import { Button } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
+
+  const handleChatNow = () => {
+    navigate("/chatbot");
+  };
   return (
     <div className="flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center">
       <div className="flex-1 justify-center flex flex-col">
@@ -14,14 +20,11 @@ export default function CallToAction() {
         <Button
           gradientDuoTone="purpleToBlue"
           className="rounded-tl-xl rounded-bl-none"
+          onClick={handleChatNow}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <a
-            href="https://google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Chat Now!
-          </a>
+          Chat Now!
         </Button>
       </div>
       <div className="p-7 flex-1">

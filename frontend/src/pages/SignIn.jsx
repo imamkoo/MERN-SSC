@@ -1,8 +1,7 @@
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import OAuth from "../components/OAuth";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
 import {
   signInFailure,
@@ -11,13 +10,20 @@ import {
 } from "../redux/user/userSlice";
 
 export default function Signin() {
-  const [formData, setFormData] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({ password: "" });
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
@@ -78,11 +84,21 @@ export default function Signin() {
             <div>
               <Label value="Password" />
               <TextInput
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="*********"
                 id="password"
+                value={formData.password}
                 onChange={handleChange}
               />
+              <Button
+                color="none"
+                size="xs"
+                pill
+                className="mt-4 "
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? "Hide" : "Show"} Password
+              </Button>
             </div>
             <Button
               gradientDuoTone="purpleToBlue"

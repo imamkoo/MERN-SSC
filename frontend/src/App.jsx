@@ -6,6 +6,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
+import ChatPage from "./pages/ChatPage";
 import CreatePost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/update-post/:postId" element={<UpdatePost />} />
         </Route>
         <Route path="/" element={<Home />} />
+        <Route path="/chatbot" element={<ChatPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
