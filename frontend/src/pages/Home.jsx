@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       {/* Visi dan Misi untuk mobile view */}
-      <div className="lg:hidden py-26">
+      <div className="lg:hidden py-24">
         <div className="relative border border-teal-500 hover:border-2 mb-6 overflow-hidden rounded-lg">
           <img
             src="https://images.unsplash.com/photo-1476950648868-16c7dca9499c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
