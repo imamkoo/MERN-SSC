@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="flex flex-col gap-6 pt-28 px-3 max-w-6xl mx-auto ">
+      <div className="flex flex-col gap-6 pt-32 px-3 max-w-6xl mx-auto ">
         <h1 className="text-3xl font-bold lg:text-6xl">
           Save Street Child Sidoarjo
         </h1>
@@ -33,7 +33,7 @@ export default function Home() {
       </div>
 
       {/* Visi dan Misi untuk desktop view */}
-      <div className="hidden lg:flex justify-center items-center gap-8 p-36">
+      <div className="hidden lg:flex justify-center items-center gap-8 p-28">
         <div className="group relative w-full border border-teal-500 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[560px] transition-all">
           <img
             src="https://images.unsplash.com/photo-1476950648868-16c7dca9499c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
