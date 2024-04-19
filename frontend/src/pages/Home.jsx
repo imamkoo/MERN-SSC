@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
+      <div className="flex flex-col gap-6 pt-28 px-3 max-w-6xl mx-auto ">
         <h1 className="text-3xl font-bold lg:text-6xl">
           Save Street Child Sidoarjo
         </h1>
@@ -31,6 +31,117 @@ export default function Home() {
           View all posts
         </Link>
       </div>
+
+      {/* Visi dan Misi untuk desktop view */}
+      <div className="hidden lg:flex justify-center items-center gap-8 p-36">
+        <div className="group relative w-full border border-teal-500 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[560px] transition-all">
+          <img
+            src="https://images.unsplash.com/photo-1476950648868-16c7dca9499c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="visi"
+            className="h-[260px] w-full  object-cover group-hover:h-[200px] transition-all duration-300 z-20"
+          />
+          <div className="p-3 flex flex-col gap-2">
+            <p className="text-2xl font-semibold line-clamp-2">Visi</p>
+            <span className="italic text-sm">
+              Menciptakan lingkungan inklusif dan berkelanjutan di Sidoarjo di
+              mana setiap anak jalanan memiliki akses yang adil terhadap
+              pendidikan, perlindungan, dan kesempatan untuk meraih potensi
+              penuh mereka.
+            </span>
+          </div>
+        </div>
+        <div className="group relative w-full border border-teal-500 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[560px] transition-all">
+          <img
+            src="https://images.unsplash.com/photo-1537655780520-1e392ead81f2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="misi"
+            className="h-[260px] w-full  object-cover group-hover:h-[200px] transition-all duration-300 z-20"
+          />
+          <div className="p-3 flex flex-col gap-2">
+            <p className="text-2xl font-semibold line-clamp-2">Misi</p>
+            <span className="italic text-sm">
+              <ol className="ml-4 list-decimal list-outside">
+                <li>
+                  <p>
+                    Memberdayakan anak jalanan dengan keterampilan dan
+                    pengetahuan yang dibutuhkan untuk mengubah hidup mereka
+                    secara positif.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Menyediakan perlindungan dan bantuan yang komprehensif bagi
+                    anak jalanan, termasuk akses ke layanan kesehatan dan
+                    sosial.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Menggalang dukungan masyarakat dan kolaborasi lintas sektor
+                    untuk memperjuangkan hak-hak anak jalanan dan membangun
+                    lingkungan yang ramah anak.
+                  </p>
+                </li>
+              </ol>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Visi dan Misi untuk mobile view */}
+      <div className="lg:hidden py-36">
+        <div className="relative border border-teal-500 hover:border-2 mb-6 overflow-hidden rounded-lg">
+          <img
+            src="https://images.unsplash.com/photo-1476950648868-16c7dca9499c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="visi"
+            className="h-[260px] w-full  object-cover transition-all duration-300 z-20"
+          />
+          <div className="p-3 flex flex-col gap-2">
+            <p className="text-2xl font-semibold line-clamp-2">Visi</p>
+            <span className="italic text-sm">
+              Menciptakan lingkungan inklusif dan berkelanjutan di Sidoarjo di
+              mana setiap anak jalanan memiliki akses yang adil terhadap
+              pendidikan, perlindungan, dan kesempatan untuk meraih potensi
+              penuh mereka.
+            </span>
+          </div>
+        </div>
+        <div className="relative border border-teal-500 hover:border-2 overflow-hidden rounded-lg">
+          <img
+            src="https://images.unsplash.com/photo-1537655780520-1e392ead81f2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="misi"
+            className="h-[260px] w-full  object-cover transition-all duration-300 z-20"
+          />
+          <div className="p-3 flex flex-col gap-2">
+            <p className="text-2xl font-semibold line-clamp-2">Misi</p>
+            <span className="italic text-sm">
+              <ol className="ml-4 list-decimal list-outside">
+                <li>
+                  <p>
+                    Memberdayakan anak jalanan dengan keterampilan dan
+                    pengetahuan yang dibutuhkan untuk mengubah hidup mereka
+                    secara positif.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Menyediakan perlindungan dan bantuan yang komprehensif bagi
+                    anak jalanan, termasuk akses ke layanan kesehatan dan
+                    sosial.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Menggalang dukungan masyarakat dan kolaborasi lintas sektor
+                    untuk memperjuangkan hak-hak anak jalanan dan membangun
+                    lingkungan yang ramah anak.
+                  </p>
+                </li>
+              </ol>
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div className="p-3 bg-amber-100 dark:bg-slate-700">
         <CallToAction />
       </div>

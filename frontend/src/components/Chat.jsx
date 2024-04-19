@@ -8,7 +8,7 @@ const Chat = () => {
   const chatHistory = useSelector((state) => state.chat.history);
 
   useEffect(() => {
-    dispatch(fetchChatHistory()); // Fetch chat history when component mounts
+    dispatch(fetchChatHistory());
   }, [dispatch]);
 
   const handleSubmit = (e) => {

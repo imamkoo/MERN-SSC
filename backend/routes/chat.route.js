@@ -39,7 +39,7 @@ router.post("/send-message", verifyToken, async (req, res, next) => {
     const chat = new Chat({
       question: text,
       answer: result.fulfillmentText,
-      userId: req.user.id, // Assuming you store user id in req.user
+      userId: req.user.id,
     });
     await chat.save();
     res.json({ reply: result.fulfillmentText });
@@ -51,7 +51,7 @@ router.post("/send-message", verifyToken, async (req, res, next) => {
 
 router.get("/history", verifyToken, async (req, res, next) => {
   try {
-    const userId = req.user.id; // Assuming you store user id in req.user
+    const userId = req.user.id;
     const chats = await Chat.find({ userId }).sort({ date: 1 });
 
     const formattedChats = chats.map((chat) => ({
@@ -69,7 +69,7 @@ router.get("/history", verifyToken, async (req, res, next) => {
 
 router.delete("/clear-history", verifyToken, async (req, res, next) => {
   try {
-    const userId = req.user.id; // Assuming you store user id in req.user
+    const userId = req.user.id;
     await Chat.deleteMany({ userId });
 
     res.json({ message: "Chat history cleared successfully." });
