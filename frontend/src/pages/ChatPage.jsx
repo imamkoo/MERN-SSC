@@ -134,7 +134,7 @@ const ChatApp = () => {
         >
           <FaEraser className="" />
         </Button>
-        <div className="mb-4">
+        <div className="mb-4 whitespace-pre-line">
           <List unstyled className="text-center ">
             {chatHistory.length > 0 ? (
               chatHistory.map((chat, index) => (
