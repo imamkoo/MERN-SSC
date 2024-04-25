@@ -21,8 +21,7 @@ export default function Home() {
           Save Street Child Sidoarjo
         </h1>
         <p className="text-gray-500 text-xs sm:text-sm">
-          {`"Empowering futures, one child at a time: Welcome to Save Street Child
-          Sidoarjo Community!"`}
+          {`"Mari Wujudkan Masa Depan yang Lebih Cerah bagi Anak-Anak Jalanan: Dukung Save Street Child Sidoarjo dan Jadikan Setiap Hari Lebih Baik"`}
         </p>
         <Link
           to="/search"
