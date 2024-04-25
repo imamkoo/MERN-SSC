@@ -87,6 +87,7 @@ export const google = async (req, res, next) => {
         .status(200)
         .cookie("access_token", token, {
           httpOnly: true,
+          maxAge: COOKIE_MAX_AGE,
         })
         .json(rest);
     } else {
@@ -115,6 +116,7 @@ export const google = async (req, res, next) => {
         .status(200)
         .cookie("access_token", token, {
           httpOnly: true,
+          maxAge: COOKIE_MAX_AGE,
         })
         .json(rest);
     }
