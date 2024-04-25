@@ -3,6 +3,10 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 
+// Batas waktu sesi 24 jam dalam detik
+const SESSION_EXPIRATION = "24h";
+const COOKIE_MAX_AGE = 24 * 60 * 60 * 1000;
+
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
 
@@ -51,7 +55,8 @@ export const signin = async (req, res, next) => {
     }
     const token = jwt.sign(
       { id: validUser._id, isAdmin: validUser.isAdmin },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      { expiresIn: SESSION_EXPIRATION }
     );
 
     const { password: pass, ...rest } = validUser._doc;
@@ -74,7 +79,8 @@ export const google = async (req, res, next) => {
     if (user) {
       const token = jwt.sign(
         { id: user._id, isAdmin: user.isAdmin },
-        process.env.JWT_SECRET
+        process.env.JWT_SECRET,
+        { expiresIn: SESSION_EXPIRATION }
       );
       const { password, ...rest } = user._doc;
       res
