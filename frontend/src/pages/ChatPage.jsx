@@ -169,7 +169,7 @@ const ChatApp = () => {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 className="flex-grow"
-                placeholder="Type your message here..."
+                placeholder={`Ketikan "Hi" untuk memulai....`}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
